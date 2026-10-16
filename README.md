@@ -53,6 +53,16 @@ python evaluate_llm.py
 - `GEMINI_API_KEY`, `GEMINI_MODEL`, `GEMINI_FALLBACK_MODELS`
 - `USE_SMARTPOLE=true` ใช้เซนเซอร์ใน สจล. เป็นค่าฝุ่นตอนนี้ (`false` = ใช้สถานีกรมควบคุมมลพิษ)
 
+## แหล่งข้อมูลและเครดิต
+โค้ดในโปรเจกต์นี้ใช้สัญญาอนุญาต MIT แต่ข้อมูลจากแหล่งต่อไปนี้เป็นของเจ้าของแต่ละแหล่ง
+- ค่าฝุ่นปัจจุบัน: KMITL Smart Pole โดย SCiRA, สจล. (ใช้เพื่อการศึกษาในรายวิชา)
+- ข้อมูลฝุ่นสำรอง: Air4Thai กรมควบคุมมลพิษ
+- พยากรณ์อากาศและข้อมูลฝึกโมเดล: Open-Meteo (CC BY 4.0)
+- แผนที่: © OpenStreetMap contributors, © CARTO
+- ผู้ช่วย AI: Google Gemini API
+
+โปรเจกต์รายวิชา สาขาสถิติประยุกต์และการวิเคราะห์ข้อมูล สจล. ไม่ใช่คำแนะนำทางการแพทย์
+
 ## Deploy (Streamlit Community Cloud)
 1. รัน `python train.py` บนเครื่องก่อน อัปโหลดโฟลเดอร์ขึ้น GitHub รวม `artifacts/` และ `data/history_hourly.csv`
    **ห้ามอัป `.env` และ `data/app.db`**
