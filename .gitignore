@@ -1,0 +1,5 @@
+.env
+__pycache__/
+data/last_recent.csv
+.streamlit/secrets.toml
+data/app.db

@@ -1,0 +1,4592 @@
+{
+  "model_name": "Gradient Boosting",
+  "features": [
+    "o_pm_now",
+    "o_pm_mean24",
+    "o_pm_max24",
+    "o_pm_mean72",
+    "o_pm_trend24",
+    "o_pm10_mean24",
+    "o_co_mean24",
+    "o_no2_mean24",
+    "o_o3_mean24",
+    "t_temp",
+    "t_rh",
+    "t_dew",
+    "t_pressure",
+    "t_cloud",
+    "t_rad",
+    "t_wind",
+    "t_gust",
+    "t_wind_sin",
+    "t_wind_cos",
+    "t_wind_mean6",
+    "t_calm12",
+    "t_blh",
+    "t_rain24",
+    "t_hour",
+    "t_dow",
+    "t_weekend",
+    "t_holiday",
+    "t_doy_sin",
+    "t_doy_cos",
+    "horizon"
+  ],
+  "medians": {
+    "o_pm_now": 10.74,
+    "o_pm_mean24": 10.5008,
+    "o_pm_max24": 15.08,
+    "o_pm_mean72": 11.0364,
+    "o_pm_trend24": 0.0433,
+    "o_pm10_mean24": 15.75,
+    "o_co_mean24": 305.0054,
+    "o_no2_mean24": 15.25,
+    "o_o3_mean24": 46.8512,
+    "t_temp": 29.0,
+    "t_rh": 70.0,
+    "t_dew": 22.98,
+    "t_pressure": 1008.02,
+    "t_cloud": 49.84,
+    "t_rad": 0.0,
+    "t_wind": 8.08,
+    "t_gust": 12.93,
+    "t_wind_sin": -0.0141,
+    "t_wind_cos": 0.2854,
+    "t_wind_mean6": 8.0033,
+    "t_calm12": 3.0,
+    "t_blh": 700.19,
+    "t_rain24": 4.16,
+    "t_hour": 12.0,
+    "t_dow": 3.0,
+    "t_weekend": 0.0,
+    "t_holiday": 0.0,
+    "t_doy_sin": 0.0108,
+    "t_doy_cos": -0.0118,
+    "horizon": 30.0
+  },
+  "trained_at": "2026-10-06 23:35",
+  "data_range": [
+    "2023-10-02",
+    "2026-10-01"
+  ],
+  "n_train_rows": 74184,
+  "horizons": [
+    1,
+    2,
+    3,
+    6,
+    9,
+    12,
+    18,
+    24,
+    30,
+    36,
+    48,
+    60,
+    72,
+    96,
+    120,
+    144,
+    168
+  ],
+  "test_from": "2026-02-23",
+  "metrics": [
+    {
+      "model": "Baseline: ค่าเท่าตอนนี้",
+      "MAE": 2.35,
+      "RMSE": 3.56,
+      "MAE 1–24 ชม. (พรุ่งนี้)": 1.9,
+      "MAE 25–72 ชม. (2–3 วัน)": 2.77,
+      "MAE 73–168 ชม. (4–7 วัน)": 2.76
+    },
+    {
+      "model": "Baseline: ค่าเฉลี่ย 24 ชม.",
+      "MAE": 2.26,
+      "RMSE": 3.31,
+      "MAE 1–24 ชม. (พรุ่งนี้)": 2.04,
+      "MAE 25–72 ชม. (2–3 วัน)": 2.45,
+      "MAE 73–168 ชม. (4–7 วัน)": 2.46
+    },
+    {
+      "model": "Random Forest",
+      "MAE": 1.87,
+      "RMSE": 2.67,
+      "MAE 1–24 ชม. (พรุ่งนี้)": 1.82,
+      "MAE 25–72 ชม. (2–3 วัน)": 1.93,
+      "MAE 73–168 ชม. (4–7 วัน)": 1.89
+    },
+    {
+      "model": "Gradient Boosting",
+      "MAE": 1.77,
+      "RMSE": 2.52,
+      "MAE 1–24 ชม. (พรุ่งนี้)": 1.7,
+      "MAE 25–72 ชม. (2–3 วัน)": 1.86,
+      "MAE 73–168 ชม. (4–7 วัน)": 1.81
+    }
+  ],
+  "beats_baseline": true,
+  "feature_importance": [
+    {
+      "feature": "t_pressure",
+      "name_th": "ความกดอากาศ",
+      "importance": 1.9413
+    },
+    {
+      "feature": "t_dew",
+      "name_th": "จุดน้ำค้าง",
+      "importance": 1.2512
+    },
+    {
+      "feature": "o_pm_now",
+      "name_th": "ฝุ่นตอนนี้",
+      "importance": 0.3956
+    },
+    {
+      "feature": "t_rain24",
+      "name_th": "ฝน 24 ชม.",
+      "importance": 0.3608
+    },
+    {
+      "feature": "t_wind_mean6",
+      "name_th": "ลมเฉลี่ย 6 ชม.",
+      "importance": 0.0706
+    },
+    {
+      "feature": "horizon",
+      "name_th": "ระยะที่ทายล่วงหน้า",
+      "importance": 0.049
+    },
+    {
+      "feature": "t_temp",
+      "name_th": "อุณหภูมิ",
+      "importance": 0.0462
+    },
+    {
+      "feature": "t_wind",
+      "name_th": "ความเร็วลม",
+      "importance": 0.0321
+    },
+    {
+      "feature": "t_calm12",
+      "name_th": "ชั่วโมงที่ลมนิ่ง",
+      "importance": 0.0263
+    },
+    {
+      "feature": "o_pm_mean72",
+      "name_th": "ฝุ่นเฉลี่ย 3 วันที่ผ่านมา",
+      "importance": 0.0198
+    },
+    {
+      "feature": "t_wind_cos",
+      "name_th": "ทิศลม (ออก-ตก)",
+      "importance": 0.0179
+    },
+    {
+      "feature": "t_doy_cos",
+      "name_th": "ฤดูกาล",
+      "importance": 0.0151
+    },
+    {
+      "feature": "t_doy_sin",
+      "name_th": "ฤดูกาล",
+      "importance": 0.013
+    },
+    {
+      "feature": "t_gust",
+      "name_th": "ลมกระโชก",
+      "importance": 0.0118
+    },
+    {
+      "feature": "t_blh",
+      "name_th": "ชั้นอากาศผสม (การระบายอากาศ)",
+      "importance": 0.0114
+    }
+  ],
+  "backtest_24h": [
+    {
+      "time": "2026-02-24 18:00",
+      "actual": 27.7,
+      "predicted": 27.1
+    },
+    {
+      "time": "2026-02-25 00:00",
+      "actual": 29.8,
+      "predicted": 26.8
+    },
+    {
+      "time": "2026-02-25 06:00",
+      "actual": 34.0,
+      "predicted": 28.0
+    },
+    {
+      "time": "2026-02-25 12:00",
+      "actual": 21.3,
+      "predicted": 21.3
+    },
+    {
+      "time": "2026-02-25 18:00",
+      "actual": 24.8,
+      "predicted": 21.9
+    },
+    {
+      "time": "2026-02-26 00:00",
+      "actual": 34.0,
+      "predicted": 22.8
+    },
+    {
+      "time": "2026-02-26 06:00",
+      "actual": 29.8,
+      "predicted": 21.9
+    },
+    {
+      "time": "2026-02-26 12:00",
+      "actual": 26.3,
+      "predicted": 26.5
+    },
+    {
+      "time": "2026-02-26 18:00",
+      "actual": 28.8,
+      "predicted": 26.5
+    },
+    {
+      "time": "2026-02-27 00:00",
+      "actual": 32.0,
+      "predicted": 28.1
+    },
+    {
+      "time": "2026-02-27 06:00",
+      "actual": 36.5,
+      "predicted": 27.8
+    },
+    {
+      "time": "2026-02-27 12:00",
+      "actual": 34.4,
+      "predicted": 26.8
+    },
+    {
+      "time": "2026-02-27 18:00",
+      "actual": 32.9,
+      "predicted": 26.7
+    },
+    {
+      "time": "2026-02-28 00:00",
+      "actual": 29.3,
+      "predicted": 22.3
+    },
+    {
+      "time": "2026-02-28 06:00",
+      "actual": 32.1,
+      "predicted": 21.5
+    },
+    {
+      "time": "2026-02-28 12:00",
+      "actual": 31.0,
+      "predicted": 21.9
+    },
+    {
+      "time": "2026-02-28 18:00",
+      "actual": 29.1,
+      "predicted": 22.1
+    },
+    {
+      "time": "2026-03-01 00:00",
+      "actual": 28.1,
+      "predicted": 28.2
+    },
+    {
+      "time": "2026-03-01 06:00",
+      "actual": 27.1,
+      "predicted": 27.7
+    },
+    {
+      "time": "2026-03-01 12:00",
+      "actual": 28.4,
+      "predicted": 27.0
+    },
+    {
+      "time": "2026-03-01 18:00",
+      "actual": 26.4,
+      "predicted": 28.1
+    },
+    {
+      "time": "2026-03-02 00:00",
+      "actual": 28.2,
+      "predicted": 28.4
+    },
+    {
+      "time": "2026-03-02 06:00",
+      "actual": 27.2,
+      "predicted": 27.2
+    },
+    {
+      "time": "2026-03-02 12:00",
+      "actual": 25.6,
+      "predicted": 26.4
+    },
+    {
+      "time": "2026-03-02 18:00",
+      "actual": 29.4,
+      "predicted": 26.7
+    },
+    {
+      "time": "2026-03-03 00:00",
+      "actual": 29.5,
+      "predicted": 27.8
+    },
+    {
+      "time": "2026-03-03 06:00",
+      "actual": 28.0,
+      "predicted": 27.2
+    },
+    {
+      "time": "2026-03-03 12:00",
+      "actual": 27.4,
+      "predicted": 25.6
+    },
+    {
+      "time": "2026-03-03 18:00",
+      "actual": 24.9,
+      "predicted": 28.5
+    },
+    {
+      "time": "2026-03-04 00:00",
+      "actual": 18.0,
+      "predicted": 26.1
+    },
+    {
+      "time": "2026-03-04 06:00",
+      "actual": 18.2,
+      "predicted": 24.9
+    },
+    {
+      "time": "2026-03-04 12:00",
+      "actual": 21.4,
+      "predicted": 22.0
+    },
+    {
+      "time": "2026-03-04 18:00",
+      "actual": 21.2,
+      "predicted": 22.3
+    },
+    {
+      "time": "2026-03-05 00:00",
+      "actual": 25.5,
+      "predicted": 24.5
+    },
+    {
+      "time": "2026-03-05 06:00",
+      "actual": 28.6,
+      "predicted": 24.1
+    },
+    {
+      "time": "2026-03-05 12:00",
+      "actual": 28.8,
+      "predicted": 23.9
+    },
+    {
+      "time": "2026-03-05 18:00",
+      "actual": 25.2,
+      "predicted": 25.4
+    },
+    {
+      "time": "2026-03-06 00:00",
+      "actual": 27.8,
+      "predicted": 27.6
+    },
+    {
+      "time": "2026-03-06 06:00",
+      "actual": 31.3,
+      "predicted": 26.0
+    },
+    {
+      "time": "2026-03-06 12:00",
+      "actual": 26.6,
+      "predicted": 25.0
+    },
+    {
+      "time": "2026-03-06 18:00",
+      "actual": 28.0,
+      "predicted": 26.0
+    },
+    {
+      "time": "2026-03-07 00:00",
+      "actual": 24.3,
+      "predicted": 25.9
+    },
+    {
+      "time": "2026-03-07 06:00",
+      "actual": 24.3,
+      "predicted": 24.8
+    },
+    {
+      "time": "2026-03-07 12:00",
+      "actual": 20.9,
+      "predicted": 22.2
+    },
+    {
+      "time": "2026-03-07 18:00",
+      "actual": 28.0,
+      "predicted": 26.5
+    },
+    {
+      "time": "2026-03-08 00:00",
+      "actual": 21.1,
+      "predicted": 25.6
+    },
+    {
+      "time": "2026-03-08 06:00",
+      "actual": 16.4,
+      "predicted": 20.2
+    },
+    {
+      "time": "2026-03-08 12:00",
+      "actual": 21.3,
+      "predicted": 20.6
+    },
+    {
+      "time": "2026-03-08 18:00",
+      "actual": 21.0,
+      "predicted": 20.8
+    },
+    {
+      "time": "2026-03-09 00:00",
+      "actual": 25.0,
+      "predicted": 24.9
+    },
+    {
+      "time": "2026-03-09 06:00",
+      "actual": 24.0,
+      "predicted": 24.4
+    },
+    {
+      "time": "2026-03-09 12:00",
+      "actual": 25.9,
+      "predicted": 22.3
+    },
+    {
+      "time": "2026-03-09 18:00",
+      "actual": 26.6,
+      "predicted": 23.5
+    },
+    {
+      "time": "2026-03-10 00:00",
+      "actual": 25.8,
+      "predicted": 25.6
+    },
+    {
+      "time": "2026-03-10 06:00",
+      "actual": 27.2,
+      "predicted": 25.3
+    },
+    {
+      "time": "2026-03-10 12:00",
+      "actual": 24.9,
+      "predicted": 24.9
+    },
+    {
+      "time": "2026-03-10 18:00",
+      "actual": 26.5,
+      "predicted": 26.1
+    },
+    {
+      "time": "2026-03-11 00:00",
+      "actual": 27.8,
+      "predicted": 25.8
+    },
+    {
+      "time": "2026-03-11 06:00",
+      "actual": 31.3,
+      "predicted": 26.4
+    },
+    {
+      "time": "2026-03-11 12:00",
+      "actual": 26.6,
+      "predicted": 23.2
+    },
+    {
+      "time": "2026-03-11 18:00",
+      "actual": 29.0,
+      "predicted": 25.5
+    },
+    {
+      "time": "2026-03-12 00:00",
+      "actual": 30.5,
+      "predicted": 25.8
+    },
+    {
+      "time": "2026-03-12 06:00",
+      "actual": 20.4,
+      "predicted": 19.5
+    },
+    {
+      "time": "2026-03-12 12:00",
+      "actual": 20.8,
+      "predicted": 19.6
+    },
+    {
+      "time": "2026-03-12 18:00",
+      "actual": 24.2,
+      "predicted": 21.1
+    },
+    {
+      "time": "2026-03-13 00:00",
+      "actual": 23.1,
+      "predicted": 22.4
+    },
+    {
+      "time": "2026-03-13 06:00",
+      "actual": 23.5,
+      "predicted": 22.0
+    },
+    {
+      "time": "2026-03-13 12:00",
+      "actual": 25.6,
+      "predicted": 24.2
+    },
+    {
+      "time": "2026-03-13 18:00",
+      "actual": 21.5,
+      "predicted": 25.2
+    },
+    {
+      "time": "2026-03-14 00:00",
+      "actual": 22.5,
+      "predicted": 24.5
+    },
+    {
+      "time": "2026-03-14 06:00",
+      "actual": 18.6,
+      "predicted": 22.8
+    },
+    {
+      "time": "2026-03-14 12:00",
+      "actual": 22.7,
+      "predicted": 24.2
+    },
+    {
+      "time": "2026-03-14 18:00",
+      "actual": 24.0,
+      "predicted": 23.3
+    },
+    {
+      "time": "2026-03-15 00:00",
+      "actual": 26.7,
+      "predicted": 24.7
+    },
+    {
+      "time": "2026-03-15 06:00",
+      "actual": 30.7,
+      "predicted": 25.0
+    },
+    {
+      "time": "2026-03-15 12:00",
+      "actual": 27.6,
+      "predicted": 24.1
+    },
+    {
+      "time": "2026-03-15 18:00",
+      "actual": 29.2,
+      "predicted": 22.4
+    },
+    {
+      "time": "2026-03-16 00:00",
+      "actual": 33.1,
+      "predicted": 26.4
+    },
+    {
+      "time": "2026-03-16 06:00",
+      "actual": 28.8,
+      "predicted": 25.3
+    },
+    {
+      "time": "2026-03-16 12:00",
+      "actual": 25.0,
+      "predicted": 20.6
+    },
+    {
+      "time": "2026-03-16 18:00",
+      "actual": 24.9,
+      "predicted": 21.4
+    },
+    {
+      "time": "2026-03-17 00:00",
+      "actual": 29.6,
+      "predicted": 23.5
+    },
+    {
+      "time": "2026-03-17 06:00",
+      "actual": 27.1,
+      "predicted": 22.4
+    },
+    {
+      "time": "2026-03-17 12:00",
+      "actual": 28.2,
+      "predicted": 22.8
+    },
+    {
+      "time": "2026-03-17 18:00",
+      "actual": 31.0,
+      "predicted": 24.3
+    },
+    {
+      "time": "2026-03-18 00:00",
+      "actual": 29.5,
+      "predicted": 24.4
+    },
+    {
+      "time": "2026-03-18 06:00",
+      "actual": 25.9,
+      "predicted": 25.1
+    },
+    {
+      "time": "2026-03-18 12:00",
+      "actual": 24.7,
+      "predicted": 24.0
+    },
+    {
+      "time": "2026-03-18 18:00",
+      "actual": 25.5,
+      "predicted": 25.2
+    },
+    {
+      "time": "2026-03-19 00:00",
+      "actual": 22.3,
+      "predicted": 26.0
+    },
+    {
+      "time": "2026-03-19 06:00",
+      "actual": 20.8,
+      "predicted": 25.1
+    },
+    {
+      "time": "2026-03-19 12:00",
+      "actual": 21.8,
+      "predicted": 23.0
+    },
+    {
+      "time": "2026-03-19 18:00",
+      "actual": 20.6,
+      "predicted": 23.5
+    },
+    {
+      "time": "2026-03-20 00:00",
+      "actual": 21.9,
+      "predicted": 22.9
+    },
+    {
+      "time": "2026-03-20 06:00",
+      "actual": 26.8,
+      "predicted": 22.6
+    },
+    {
+      "time": "2026-03-20 12:00",
+      "actual": 24.6,
+      "predicted": 19.8
+    },
+    {
+      "time": "2026-03-20 18:00",
+      "actual": 21.3,
+      "predicted": 20.1
+    },
+    {
+      "time": "2026-03-21 00:00",
+      "actual": 16.6,
+      "predicted": 21.2
+    },
+    {
+      "time": "2026-03-21 06:00",
+      "actual": 18.4,
+      "predicted": 20.5
+    },
+    {
+      "time": "2026-03-21 12:00",
+      "actual": 19.0,
+      "predicted": 19.5
+    },
+    {
+      "time": "2026-03-21 18:00",
+      "actual": 20.4,
+      "predicted": 19.5
+    },
+    {
+      "time": "2026-03-22 00:00",
+      "actual": 22.6,
+      "predicted": 19.7
+    },
+    {
+      "time": "2026-03-22 06:00",
+      "actual": 23.4,
+      "predicted": 21.3
+    },
+    {
+      "time": "2026-03-22 12:00",
+      "actual": 18.2,
+      "predicted": 21.1
+    },
+    {
+      "time": "2026-03-22 18:00",
+      "actual": 20.6,
+      "predicted": 20.8
+    },
+    {
+      "time": "2026-03-23 00:00",
+      "actual": 20.4,
+      "predicted": 23.1
+    },
+    {
+      "time": "2026-03-23 06:00",
+      "actual": 20.0,
+      "predicted": 21.9
+    },
+    {
+      "time": "2026-03-23 12:00",
+      "actual": 20.1,
+      "predicted": 20.1
+    },
+    {
+      "time": "2026-03-23 18:00",
+      "actual": 20.7,
+      "predicted": 21.9
+    },
+    {
+      "time": "2026-03-24 00:00",
+      "actual": 22.0,
+      "predicted": 22.9
+    },
+    {
+      "time": "2026-03-24 06:00",
+      "actual": 9.0,
+      "predicted": 15.2
+    },
+    {
+      "time": "2026-03-24 12:00",
+      "actual": 13.2,
+      "predicted": 15.3
+    },
+    {
+      "time": "2026-03-24 18:00",
+      "actual": 19.0,
+      "predicted": 17.7
+    },
+    {
+      "time": "2026-03-25 00:00",
+      "actual": 17.3,
+      "predicted": 17.4
+    },
+    {
+      "time": "2026-03-25 06:00",
+      "actual": 22.4,
+      "predicted": 20.9
+    },
+    {
+      "time": "2026-03-25 12:00",
+      "actual": 22.4,
+      "predicted": 21.4
+    },
+    {
+      "time": "2026-03-25 18:00",
+      "actual": 20.5,
+      "predicted": 21.5
+    },
+    {
+      "time": "2026-03-26 00:00",
+      "actual": 21.9,
+      "predicted": 21.8
+    },
+    {
+      "time": "2026-03-26 06:00",
+      "actual": 18.5,
+      "predicted": 22.5
+    },
+    {
+      "time": "2026-03-26 12:00",
+      "actual": 15.2,
+      "predicted": 21.8
+    },
+    {
+      "time": "2026-03-26 18:00",
+      "actual": 15.9,
+      "predicted": 21.8
+    },
+    {
+      "time": "2026-03-27 00:00",
+      "actual": 13.5,
+      "predicted": 17.9
+    },
+    {
+      "time": "2026-03-27 06:00",
+      "actual": 15.9,
+      "predicted": 16.3
+    },
+    {
+      "time": "2026-03-27 12:00",
+      "actual": 12.2,
+      "predicted": 12.5
+    },
+    {
+      "time": "2026-03-27 18:00",
+      "actual": 14.7,
+      "predicted": 13.0
+    },
+    {
+      "time": "2026-03-28 00:00",
+      "actual": 18.6,
+      "predicted": 20.0
+    },
+    {
+      "time": "2026-03-28 06:00",
+      "actual": 18.8,
+      "predicted": 17.9
+    },
+    {
+      "time": "2026-03-28 12:00",
+      "actual": 16.8,
+      "predicted": 18.4
+    },
+    {
+      "time": "2026-03-28 18:00",
+      "actual": 12.4,
+      "predicted": 19.9
+    },
+    {
+      "time": "2026-03-29 00:00",
+      "actual": 21.8,
+      "predicted": 21.2
+    },
+    {
+      "time": "2026-03-29 06:00",
+      "actual": 20.0,
+      "predicted": 19.6
+    },
+    {
+      "time": "2026-03-29 12:00",
+      "actual": 23.6,
+      "predicted": 17.0
+    },
+    {
+      "time": "2026-03-29 18:00",
+      "actual": 17.2,
+      "predicted": 15.6
+    },
+    {
+      "time": "2026-03-30 00:00",
+      "actual": 24.1,
+      "predicted": 19.7
+    },
+    {
+      "time": "2026-03-30 06:00",
+      "actual": 23.4,
+      "predicted": 19.2
+    },
+    {
+      "time": "2026-03-30 12:00",
+      "actual": 17.4,
+      "predicted": 17.1
+    },
+    {
+      "time": "2026-03-30 18:00",
+      "actual": 22.1,
+      "predicted": 20.7
+    },
+    {
+      "time": "2026-03-31 00:00",
+      "actual": 20.6,
+      "predicted": 23.0
+    },
+    {
+      "time": "2026-03-31 06:00",
+      "actual": 17.4,
+      "predicted": 16.4
+    },
+    {
+      "time": "2026-03-31 12:00",
+      "actual": 20.0,
+      "predicted": 15.3
+    },
+    {
+      "time": "2026-03-31 18:00",
+      "actual": 17.1,
+      "predicted": 17.8
+    },
+    {
+      "time": "2026-04-01 00:00",
+      "actual": 18.7,
+      "predicted": 20.0
+    },
+    {
+      "time": "2026-04-01 06:00",
+      "actual": 15.1,
+      "predicted": 21.7
+    },
+    {
+      "time": "2026-04-01 12:00",
+      "actual": 12.0,
+      "predicted": 20.9
+    },
+    {
+      "time": "2026-04-01 18:00",
+      "actual": 13.6,
+      "predicted": 21.2
+    },
+    {
+      "time": "2026-04-02 00:00",
+      "actual": 15.0,
+      "predicted": 23.8
+    },
+    {
+      "time": "2026-04-02 06:00",
+      "actual": 11.3,
+      "predicted": 17.1
+    },
+    {
+      "time": "2026-04-02 12:00",
+      "actual": 12.2,
+      "predicted": 14.7
+    },
+    {
+      "time": "2026-04-02 18:00",
+      "actual": 16.4,
+      "predicted": 16.4
+    },
+    {
+      "time": "2026-04-03 00:00",
+      "actual": 13.8,
+      "predicted": 16.9
+    },
+    {
+      "time": "2026-04-03 06:00",
+      "actual": 19.9,
+      "predicted": 18.2
+    },
+    {
+      "time": "2026-04-03 12:00",
+      "actual": 21.6,
+      "predicted": 15.2
+    },
+    {
+      "time": "2026-04-03 18:00",
+      "actual": 17.5,
+      "predicted": 16.4
+    },
+    {
+      "time": "2026-04-04 00:00",
+      "actual": 22.7,
+      "predicted": 17.6
+    },
+    {
+      "time": "2026-04-04 06:00",
+      "actual": 3.1,
+      "predicted": 12.8
+    },
+    {
+      "time": "2026-04-04 12:00",
+      "actual": 2.0,
+      "predicted": 10.2
+    },
+    {
+      "time": "2026-04-04 18:00",
+      "actual": 5.8,
+      "predicted": 13.6
+    },
+    {
+      "time": "2026-04-05 00:00",
+      "actual": 10.3,
+      "predicted": 10.6
+    },
+    {
+      "time": "2026-04-05 06:00",
+      "actual": 12.5,
+      "predicted": 13.3
+    },
+    {
+      "time": "2026-04-05 12:00",
+      "actual": 13.8,
+      "predicted": 14.6
+    },
+    {
+      "time": "2026-04-05 18:00",
+      "actual": 13.7,
+      "predicted": 15.5
+    },
+    {
+      "time": "2026-04-06 00:00",
+      "actual": 18.6,
+      "predicted": 17.2
+    },
+    {
+      "time": "2026-04-06 06:00",
+      "actual": 18.2,
+      "predicted": 16.1
+    },
+    {
+      "time": "2026-04-06 12:00",
+      "actual": 15.8,
+      "predicted": 15.4
+    },
+    {
+      "time": "2026-04-06 18:00",
+      "actual": 19.9,
+      "predicted": 16.2
+    },
+    {
+      "time": "2026-04-07 00:00",
+      "actual": 24.3,
+      "predicted": 18.0
+    },
+    {
+      "time": "2026-04-07 06:00",
+      "actual": 20.2,
+      "predicted": 18.2
+    },
+    {
+      "time": "2026-04-07 12:00",
+      "actual": 20.9,
+      "predicted": 16.1
+    },
+    {
+      "time": "2026-04-07 18:00",
+      "actual": 17.2,
+      "predicted": 17.2
+    },
+    {
+      "time": "2026-04-08 00:00",
+      "actual": 23.1,
+      "predicted": 19.6
+    },
+    {
+      "time": "2026-04-08 06:00",
+      "actual": 21.8,
+      "predicted": 20.3
+    },
+    {
+      "time": "2026-04-08 12:00",
+      "actual": 13.4,
+      "predicted": 18.1
+    },
+    {
+      "time": "2026-04-08 18:00",
+      "actual": 16.7,
+      "predicted": 18.5
+    },
+    {
+      "time": "2026-04-09 00:00",
+      "actual": 14.6,
+      "predicted": 17.7
+    },
+    {
+      "time": "2026-04-09 06:00",
+      "actual": 16.6,
+      "predicted": 16.7
+    },
+    {
+      "time": "2026-04-09 12:00",
+      "actual": 16.6,
+      "predicted": 15.3
+    },
+    {
+      "time": "2026-04-09 18:00",
+      "actual": 19.9,
+      "predicted": 16.0
+    },
+    {
+      "time": "2026-04-10 00:00",
+      "actual": 20.7,
+      "predicted": 16.5
+    },
+    {
+      "time": "2026-04-10 06:00",
+      "actual": 16.4,
+      "predicted": 15.1
+    },
+    {
+      "time": "2026-04-10 12:00",
+      "actual": 17.0,
+      "predicted": 13.1
+    },
+    {
+      "time": "2026-04-10 18:00",
+      "actual": 22.8,
+      "predicted": 14.8
+    },
+    {
+      "time": "2026-04-11 00:00",
+      "actual": 21.6,
+      "predicted": 16.5
+    },
+    {
+      "time": "2026-04-11 06:00",
+      "actual": 23.3,
+      "predicted": 16.5
+    },
+    {
+      "time": "2026-04-11 12:00",
+      "actual": 14.3,
+      "predicted": 11.4
+    },
+    {
+      "time": "2026-04-11 18:00",
+      "actual": 14.9,
+      "predicted": 13.1
+    },
+    {
+      "time": "2026-04-12 00:00",
+      "actual": 15.3,
+      "predicted": 11.8
+    },
+    {
+      "time": "2026-04-12 06:00",
+      "actual": 9.0,
+      "predicted": 9.5
+    },
+    {
+      "time": "2026-04-12 12:00",
+      "actual": 14.1,
+      "predicted": 11.7
+    },
+    {
+      "time": "2026-04-12 18:00",
+      "actual": 8.9,
+      "predicted": 11.6
+    },
+    {
+      "time": "2026-04-13 00:00",
+      "actual": 11.2,
+      "predicted": 11.7
+    },
+    {
+      "time": "2026-04-13 06:00",
+      "actual": 3.7,
+      "predicted": 9.2
+    },
+    {
+      "time": "2026-04-13 12:00",
+      "actual": 4.3,
+      "predicted": 8.9
+    },
+    {
+      "time": "2026-04-13 18:00",
+      "actual": 10.8,
+      "predicted": 9.4
+    },
+    {
+      "time": "2026-04-14 00:00",
+      "actual": 12.1,
+      "predicted": 12.3
+    },
+    {
+      "time": "2026-04-14 06:00",
+      "actual": 14.7,
+      "predicted": 13.1
+    },
+    {
+      "time": "2026-04-14 12:00",
+      "actual": 20.8,
+      "predicted": 13.2
+    },
+    {
+      "time": "2026-04-14 18:00",
+      "actual": 21.7,
+      "predicted": 13.3
+    },
+    {
+      "time": "2026-04-15 00:00",
+      "actual": 22.0,
+      "predicted": 14.8
+    },
+    {
+      "time": "2026-04-15 06:00",
+      "actual": 18.4,
+      "predicted": 14.1
+    },
+    {
+      "time": "2026-04-15 12:00",
+      "actual": 15.1,
+      "predicted": 13.0
+    },
+    {
+      "time": "2026-04-15 18:00",
+      "actual": 17.4,
+      "predicted": 15.8
+    },
+    {
+      "time": "2026-04-16 00:00",
+      "actual": 17.1,
+      "predicted": 16.5
+    },
+    {
+      "time": "2026-04-16 06:00",
+      "actual": 15.9,
+      "predicted": 16.4
+    },
+    {
+      "time": "2026-04-16 12:00",
+      "actual": 10.5,
+      "predicted": 12.2
+    },
+    {
+      "time": "2026-04-16 18:00",
+      "actual": 13.4,
+      "predicted": 13.3
+    },
+    {
+      "time": "2026-04-17 00:00",
+      "actual": 12.3,
+      "predicted": 14.6
+    },
+    {
+      "time": "2026-04-17 06:00",
+      "actual": 6.9,
+      "predicted": 12.8
+    },
+    {
+      "time": "2026-04-17 12:00",
+      "actual": 10.5,
+      "predicted": 14.1
+    },
+    {
+      "time": "2026-04-17 18:00",
+      "actual": 12.8,
+      "predicted": 15.3
+    },
+    {
+      "time": "2026-04-18 00:00",
+      "actual": 17.6,
+      "predicted": 16.1
+    },
+    {
+      "time": "2026-04-18 06:00",
+      "actual": 16.2,
+      "predicted": 15.5
+    },
+    {
+      "time": "2026-04-18 12:00",
+      "actual": 6.7,
+      "predicted": 12.1
+    },
+    {
+      "time": "2026-04-18 18:00",
+      "actual": 8.1,
+      "predicted": 13.6
+    },
+    {
+      "time": "2026-04-19 00:00",
+      "actual": 10.8,
+      "predicted": 14.4
+    },
+    {
+      "time": "2026-04-19 06:00",
+      "actual": 13.2,
+      "predicted": 12.6
+    },
+    {
+      "time": "2026-04-19 12:00",
+      "actual": 11.9,
+      "predicted": 11.1
+    },
+    {
+      "time": "2026-04-19 18:00",
+      "actual": 12.4,
+      "predicted": 12.7
+    },
+    {
+      "time": "2026-04-20 00:00",
+      "actual": 10.6,
+      "predicted": 13.7
+    },
+    {
+      "time": "2026-04-20 06:00",
+      "actual": 9.2,
+      "predicted": 13.3
+    },
+    {
+      "time": "2026-04-20 12:00",
+      "actual": 5.1,
+      "predicted": 11.9
+    },
+    {
+      "time": "2026-04-20 18:00",
+      "actual": 7.9,
+      "predicted": 12.7
+    },
+    {
+      "time": "2026-04-21 00:00",
+      "actual": 2.0,
+      "predicted": 10.6
+    },
+    {
+      "time": "2026-04-21 06:00",
+      "actual": 3.8,
+      "predicted": 6.9
+    },
+    {
+      "time": "2026-04-21 12:00",
+      "actual": 3.2,
+      "predicted": 6.6
+    },
+    {
+      "time": "2026-04-21 18:00",
+      "actual": 5.5,
+      "predicted": 7.9
+    },
+    {
+      "time": "2026-04-22 00:00",
+      "actual": 7.9,
+      "predicted": 8.4
+    },
+    {
+      "time": "2026-04-22 06:00",
+      "actual": 8.0,
+      "predicted": 6.8
+    },
+    {
+      "time": "2026-04-22 12:00",
+      "actual": 4.9,
+      "predicted": 10.6
+    },
+    {
+      "time": "2026-04-22 18:00",
+      "actual": 7.2,
+      "predicted": 10.6
+    },
+    {
+      "time": "2026-04-23 00:00",
+      "actual": 9.7,
+      "predicted": 12.1
+    },
+    {
+      "time": "2026-04-23 06:00",
+      "actual": 6.9,
+      "predicted": 8.6
+    },
+    {
+      "time": "2026-04-23 12:00",
+      "actual": 8.9,
+      "predicted": 7.7
+    },
+    {
+      "time": "2026-04-23 18:00",
+      "actual": 12.4,
+      "predicted": 8.5
+    },
+    {
+      "time": "2026-04-24 00:00",
+      "actual": 13.4,
+      "predicted": 8.5
+    },
+    {
+      "time": "2026-04-24 06:00",
+      "actual": 11.7,
+      "predicted": 8.4
+    },
+    {
+      "time": "2026-04-24 12:00",
+      "actual": 12.2,
+      "predicted": 7.9
+    },
+    {
+      "time": "2026-04-24 18:00",
+      "actual": 16.7,
+      "predicted": 8.9
+    },
+    {
+      "time": "2026-04-25 00:00",
+      "actual": 16.0,
+      "predicted": 10.6
+    },
+    {
+      "time": "2026-04-25 06:00",
+      "actual": 16.7,
+      "predicted": 9.2
+    },
+    {
+      "time": "2026-04-25 12:00",
+      "actual": 17.4,
+      "predicted": 9.8
+    },
+    {
+      "time": "2026-04-25 18:00",
+      "actual": 11.2,
+      "predicted": 11.1
+    },
+    {
+      "time": "2026-04-26 00:00",
+      "actual": 13.0,
+      "predicted": 11.3
+    },
+    {
+      "time": "2026-04-26 06:00",
+      "actual": 13.8,
+      "predicted": 11.3
+    },
+    {
+      "time": "2026-04-26 12:00",
+      "actual": 12.3,
+      "predicted": 11.6
+    },
+    {
+      "time": "2026-04-26 18:00",
+      "actual": 9.8,
+      "predicted": 10.9
+    },
+    {
+      "time": "2026-04-27 00:00",
+      "actual": 7.3,
+      "predicted": 10.9
+    },
+    {
+      "time": "2026-04-27 06:00",
+      "actual": 11.2,
+      "predicted": 9.4
+    },
+    {
+      "time": "2026-04-27 12:00",
+      "actual": 10.6,
+      "predicted": 8.6
+    },
+    {
+      "time": "2026-04-27 18:00",
+      "actual": 12.7,
+      "predicted": 9.3
+    },
+    {
+      "time": "2026-04-28 00:00",
+      "actual": 13.5,
+      "predicted": 10.8
+    },
+    {
+      "time": "2026-04-28 06:00",
+      "actual": 6.4,
+      "predicted": 4.6
+    },
+    {
+      "time": "2026-04-28 12:00",
+      "actual": 4.1,
+      "predicted": 5.3
+    },
+    {
+      "time": "2026-04-28 18:00",
+      "actual": 5.1,
+      "predicted": 6.9
+    },
+    {
+      "time": "2026-04-29 00:00",
+      "actual": 4.6,
+      "predicted": 6.4
+    },
+    {
+      "time": "2026-04-29 06:00",
+      "actual": 5.1,
+      "predicted": 9.0
+    },
+    {
+      "time": "2026-04-29 12:00",
+      "actual": 5.9,
+      "predicted": 6.2
+    },
+    {
+      "time": "2026-04-29 18:00",
+      "actual": 5.6,
+      "predicted": 7.2
+    },
+    {
+      "time": "2026-04-30 00:00",
+      "actual": 15.1,
+      "predicted": 9.8
+    },
+    {
+      "time": "2026-04-30 06:00",
+      "actual": 10.9,
+      "predicted": 9.4
+    },
+    {
+      "time": "2026-04-30 12:00",
+      "actual": 6.8,
+      "predicted": 9.5
+    },
+    {
+      "time": "2026-04-30 18:00",
+      "actual": 6.1,
+      "predicted": 10.6
+    },
+    {
+      "time": "2026-05-01 00:00",
+      "actual": 7.6,
+      "predicted": 12.3
+    },
+    {
+      "time": "2026-05-01 06:00",
+      "actual": 5.8,
+      "predicted": 11.2
+    },
+    {
+      "time": "2026-05-01 12:00",
+      "actual": 5.4,
+      "predicted": 10.0
+    },
+    {
+      "time": "2026-05-01 18:00",
+      "actual": 9.0,
+      "predicted": 11.9
+    },
+    {
+      "time": "2026-05-02 00:00",
+      "actual": 15.3,
+      "predicted": 9.6
+    },
+    {
+      "time": "2026-05-02 06:00",
+      "actual": 6.8,
+      "predicted": 7.6
+    },
+    {
+      "time": "2026-05-02 12:00",
+      "actual": 9.0,
+      "predicted": 6.3
+    },
+    {
+      "time": "2026-05-02 18:00",
+      "actual": 5.0,
+      "predicted": 7.3
+    },
+    {
+      "time": "2026-05-03 00:00",
+      "actual": 3.8,
+      "predicted": 7.6
+    },
+    {
+      "time": "2026-05-03 06:00",
+      "actual": 7.8,
+      "predicted": 8.8
+    },
+    {
+      "time": "2026-05-03 12:00",
+      "actual": 9.0,
+      "predicted": 7.4
+    },
+    {
+      "time": "2026-05-03 18:00",
+      "actual": 12.8,
+      "predicted": 6.9
+    },
+    {
+      "time": "2026-05-04 00:00",
+      "actual": 13.2,
+      "predicted": 6.6
+    },
+    {
+      "time": "2026-05-04 06:00",
+      "actual": 6.7,
+      "predicted": 5.6
+    },
+    {
+      "time": "2026-05-04 12:00",
+      "actual": 5.4,
+      "predicted": 4.6
+    },
+    {
+      "time": "2026-05-04 18:00",
+      "actual": 6.2,
+      "predicted": 5.0
+    },
+    {
+      "time": "2026-05-05 00:00",
+      "actual": 11.7,
+      "predicted": 6.1
+    },
+    {
+      "time": "2026-05-05 06:00",
+      "actual": 14.2,
+      "predicted": 5.5
+    },
+    {
+      "time": "2026-05-05 12:00",
+      "actual": 12.7,
+      "predicted": 4.2
+    },
+    {
+      "time": "2026-05-05 18:00",
+      "actual": 7.0,
+      "predicted": 5.1
+    },
+    {
+      "time": "2026-05-06 00:00",
+      "actual": 4.6,
+      "predicted": 6.3
+    },
+    {
+      "time": "2026-05-06 06:00",
+      "actual": 3.0,
+      "predicted": 5.1
+    },
+    {
+      "time": "2026-05-06 12:00",
+      "actual": 3.5,
+      "predicted": 3.6
+    },
+    {
+      "time": "2026-05-06 18:00",
+      "actual": 6.5,
+      "predicted": 4.8
+    },
+    {
+      "time": "2026-05-07 00:00",
+      "actual": 8.3,
+      "predicted": 6.3
+    },
+    {
+      "time": "2026-05-07 06:00",
+      "actual": 6.6,
+      "predicted": 4.6
+    },
+    {
+      "time": "2026-05-07 12:00",
+      "actual": 2.0,
+      "predicted": 4.2
+    },
+    {
+      "time": "2026-05-07 18:00",
+      "actual": 4.4,
+      "predicted": 6.0
+    },
+    {
+      "time": "2026-05-08 00:00",
+      "actual": 9.8,
+      "predicted": 8.1
+    },
+    {
+      "time": "2026-05-08 06:00",
+      "actual": 3.0,
+      "predicted": 6.7
+    },
+    {
+      "time": "2026-05-08 12:00",
+      "actual": 9.2,
+      "predicted": 3.9
+    },
+    {
+      "time": "2026-05-08 18:00",
+      "actual": 10.2,
+      "predicted": 5.6
+    },
+    {
+      "time": "2026-05-09 00:00",
+      "actual": 9.6,
+      "predicted": 6.1
+    },
+    {
+      "time": "2026-05-09 06:00",
+      "actual": 2.3,
+      "predicted": 3.9
+    },
+    {
+      "time": "2026-05-09 12:00",
+      "actual": 5.9,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-05-09 18:00",
+      "actual": 5.1,
+      "predicted": 4.3
+    },
+    {
+      "time": "2026-05-10 00:00",
+      "actual": 4.7,
+      "predicted": 5.3
+    },
+    {
+      "time": "2026-05-10 06:00",
+      "actual": 2.0,
+      "predicted": 3.9
+    },
+    {
+      "time": "2026-05-10 12:00",
+      "actual": 6.3,
+      "predicted": 3.7
+    },
+    {
+      "time": "2026-05-10 18:00",
+      "actual": 2.0,
+      "predicted": 4.4
+    },
+    {
+      "time": "2026-05-11 00:00",
+      "actual": 6.4,
+      "predicted": 5.8
+    },
+    {
+      "time": "2026-05-11 06:00",
+      "actual": 11.3,
+      "predicted": 6.3
+    },
+    {
+      "time": "2026-05-11 12:00",
+      "actual": 10.3,
+      "predicted": 4.6
+    },
+    {
+      "time": "2026-05-11 18:00",
+      "actual": 6.6,
+      "predicted": 5.0
+    },
+    {
+      "time": "2026-05-12 00:00",
+      "actual": 9.8,
+      "predicted": 7.4
+    },
+    {
+      "time": "2026-05-12 06:00",
+      "actual": 4.9,
+      "predicted": 5.6
+    },
+    {
+      "time": "2026-05-12 12:00",
+      "actual": 6.4,
+      "predicted": 5.5
+    },
+    {
+      "time": "2026-05-12 18:00",
+      "actual": 2.0,
+      "predicted": 4.3
+    },
+    {
+      "time": "2026-05-13 00:00",
+      "actual": 5.3,
+      "predicted": 4.7
+    },
+    {
+      "time": "2026-05-13 06:00",
+      "actual": 4.8,
+      "predicted": 3.1
+    },
+    {
+      "time": "2026-05-13 12:00",
+      "actual": 6.0,
+      "predicted": 4.0
+    },
+    {
+      "time": "2026-05-13 18:00",
+      "actual": 11.2,
+      "predicted": 5.6
+    },
+    {
+      "time": "2026-05-14 00:00",
+      "actual": 8.0,
+      "predicted": 6.2
+    },
+    {
+      "time": "2026-05-14 06:00",
+      "actual": 7.5,
+      "predicted": 4.9
+    },
+    {
+      "time": "2026-05-14 12:00",
+      "actual": 2.0,
+      "predicted": 4.0
+    },
+    {
+      "time": "2026-05-14 18:00",
+      "actual": 4.2,
+      "predicted": 4.8
+    },
+    {
+      "time": "2026-05-15 00:00",
+      "actual": 3.0,
+      "predicted": 4.3
+    },
+    {
+      "time": "2026-05-15 06:00",
+      "actual": 3.5,
+      "predicted": 3.9
+    },
+    {
+      "time": "2026-05-15 12:00",
+      "actual": 2.0,
+      "predicted": 3.5
+    },
+    {
+      "time": "2026-05-15 18:00",
+      "actual": 2.0,
+      "predicted": 3.9
+    },
+    {
+      "time": "2026-05-16 00:00",
+      "actual": 6.0,
+      "predicted": 4.9
+    },
+    {
+      "time": "2026-05-16 06:00",
+      "actual": 2.0,
+      "predicted": 3.4
+    },
+    {
+      "time": "2026-05-16 12:00",
+      "actual": 7.0,
+      "predicted": 3.4
+    },
+    {
+      "time": "2026-05-16 18:00",
+      "actual": 5.3,
+      "predicted": 6.1
+    },
+    {
+      "time": "2026-05-17 00:00",
+      "actual": 3.4,
+      "predicted": 4.9
+    },
+    {
+      "time": "2026-05-17 06:00",
+      "actual": 6.2,
+      "predicted": 4.3
+    },
+    {
+      "time": "2026-05-17 12:00",
+      "actual": 3.3,
+      "predicted": 4.3
+    },
+    {
+      "time": "2026-05-17 18:00",
+      "actual": 6.5,
+      "predicted": 5.2
+    },
+    {
+      "time": "2026-05-18 00:00",
+      "actual": 7.0,
+      "predicted": 5.9
+    },
+    {
+      "time": "2026-05-18 06:00",
+      "actual": 2.0,
+      "predicted": 3.6
+    },
+    {
+      "time": "2026-05-18 12:00",
+      "actual": 2.1,
+      "predicted": 3.7
+    },
+    {
+      "time": "2026-05-18 18:00",
+      "actual": 2.7,
+      "predicted": 4.2
+    },
+    {
+      "time": "2026-05-19 00:00",
+      "actual": 4.6,
+      "predicted": 4.2
+    },
+    {
+      "time": "2026-05-19 06:00",
+      "actual": 4.1,
+      "predicted": 3.5
+    },
+    {
+      "time": "2026-05-19 12:00",
+      "actual": 2.0,
+      "predicted": 3.8
+    },
+    {
+      "time": "2026-05-19 18:00",
+      "actual": 2.0,
+      "predicted": 4.5
+    },
+    {
+      "time": "2026-05-20 00:00",
+      "actual": 2.2,
+      "predicted": 4.0
+    },
+    {
+      "time": "2026-05-20 06:00",
+      "actual": 4.8,
+      "predicted": 4.1
+    },
+    {
+      "time": "2026-05-20 12:00",
+      "actual": 2.2,
+      "predicted": 3.4
+    },
+    {
+      "time": "2026-05-20 18:00",
+      "actual": 6.8,
+      "predicted": 4.6
+    },
+    {
+      "time": "2026-05-21 00:00",
+      "actual": 9.1,
+      "predicted": 6.6
+    },
+    {
+      "time": "2026-05-21 06:00",
+      "actual": 2.0,
+      "predicted": 4.3
+    },
+    {
+      "time": "2026-05-21 12:00",
+      "actual": 3.9,
+      "predicted": 3.4
+    },
+    {
+      "time": "2026-05-21 18:00",
+      "actual": 3.6,
+      "predicted": 4.5
+    },
+    {
+      "time": "2026-05-22 00:00",
+      "actual": 3.0,
+      "predicted": 4.5
+    },
+    {
+      "time": "2026-05-22 06:00",
+      "actual": 5.0,
+      "predicted": 4.1
+    },
+    {
+      "time": "2026-05-22 12:00",
+      "actual": 2.0,
+      "predicted": 3.8
+    },
+    {
+      "time": "2026-05-22 18:00",
+      "actual": 3.1,
+      "predicted": 4.5
+    },
+    {
+      "time": "2026-05-23 00:00",
+      "actual": 5.5,
+      "predicted": 7.3
+    },
+    {
+      "time": "2026-05-23 06:00",
+      "actual": 5.9,
+      "predicted": 6.9
+    },
+    {
+      "time": "2026-05-23 12:00",
+      "actual": 4.0,
+      "predicted": 4.7
+    },
+    {
+      "time": "2026-05-23 18:00",
+      "actual": 2.6,
+      "predicted": 5.6
+    },
+    {
+      "time": "2026-05-24 00:00",
+      "actual": 3.8,
+      "predicted": 6.9
+    },
+    {
+      "time": "2026-05-24 06:00",
+      "actual": 2.7,
+      "predicted": 5.0
+    },
+    {
+      "time": "2026-05-24 12:00",
+      "actual": 3.6,
+      "predicted": 3.6
+    },
+    {
+      "time": "2026-05-24 18:00",
+      "actual": 6.0,
+      "predicted": 5.0
+    },
+    {
+      "time": "2026-05-25 00:00",
+      "actual": 9.4,
+      "predicted": 4.1
+    },
+    {
+      "time": "2026-05-25 06:00",
+      "actual": 4.6,
+      "predicted": 4.2
+    },
+    {
+      "time": "2026-05-25 12:00",
+      "actual": 4.4,
+      "predicted": 3.9
+    },
+    {
+      "time": "2026-05-25 18:00",
+      "actual": 2.6,
+      "predicted": 3.4
+    },
+    {
+      "time": "2026-05-26 00:00",
+      "actual": 5.2,
+      "predicted": 4.7
+    },
+    {
+      "time": "2026-05-26 06:00",
+      "actual": 3.1,
+      "predicted": 3.7
+    },
+    {
+      "time": "2026-05-26 12:00",
+      "actual": 2.4,
+      "predicted": 3.4
+    },
+    {
+      "time": "2026-05-26 18:00",
+      "actual": 7.9,
+      "predicted": 4.0
+    },
+    {
+      "time": "2026-05-27 00:00",
+      "actual": 4.0,
+      "predicted": 4.4
+    },
+    {
+      "time": "2026-05-27 06:00",
+      "actual": 3.0,
+      "predicted": 3.7
+    },
+    {
+      "time": "2026-05-27 12:00",
+      "actual": 2.0,
+      "predicted": 3.7
+    },
+    {
+      "time": "2026-05-27 18:00",
+      "actual": 4.4,
+      "predicted": 4.5
+    },
+    {
+      "time": "2026-05-28 00:00",
+      "actual": 6.5,
+      "predicted": 4.7
+    },
+    {
+      "time": "2026-05-28 06:00",
+      "actual": 4.1,
+      "predicted": 3.5
+    },
+    {
+      "time": "2026-05-28 12:00",
+      "actual": 2.1,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-05-28 18:00",
+      "actual": 7.5,
+      "predicted": 3.8
+    },
+    {
+      "time": "2026-05-29 00:00",
+      "actual": 8.7,
+      "predicted": 4.5
+    },
+    {
+      "time": "2026-05-29 06:00",
+      "actual": 6.5,
+      "predicted": 4.5
+    },
+    {
+      "time": "2026-05-29 12:00",
+      "actual": 6.3,
+      "predicted": 3.4
+    },
+    {
+      "time": "2026-05-29 18:00",
+      "actual": 7.1,
+      "predicted": 3.8
+    },
+    {
+      "time": "2026-05-30 00:00",
+      "actual": 8.8,
+      "predicted": 5.1
+    },
+    {
+      "time": "2026-05-30 06:00",
+      "actual": 8.4,
+      "predicted": 4.4
+    },
+    {
+      "time": "2026-05-30 12:00",
+      "actual": 5.4,
+      "predicted": 3.3
+    },
+    {
+      "time": "2026-05-30 18:00",
+      "actual": 9.6,
+      "predicted": 4.2
+    },
+    {
+      "time": "2026-05-31 00:00",
+      "actual": 13.0,
+      "predicted": 7.0
+    },
+    {
+      "time": "2026-05-31 06:00",
+      "actual": 5.5,
+      "predicted": 6.7
+    },
+    {
+      "time": "2026-05-31 12:00",
+      "actual": 3.1,
+      "predicted": 5.1
+    },
+    {
+      "time": "2026-05-31 18:00",
+      "actual": 2.0,
+      "predicted": 6.2
+    },
+    {
+      "time": "2026-06-01 00:00",
+      "actual": 2.3,
+      "predicted": 6.1
+    },
+    {
+      "time": "2026-06-01 06:00",
+      "actual": 2.0,
+      "predicted": 5.2
+    },
+    {
+      "time": "2026-06-01 12:00",
+      "actual": 5.0,
+      "predicted": 4.5
+    },
+    {
+      "time": "2026-06-01 18:00",
+      "actual": 5.3,
+      "predicted": 4.0
+    },
+    {
+      "time": "2026-06-02 00:00",
+      "actual": 3.0,
+      "predicted": 5.2
+    },
+    {
+      "time": "2026-06-02 06:00",
+      "actual": 2.3,
+      "predicted": 3.3
+    },
+    {
+      "time": "2026-06-02 12:00",
+      "actual": 3.8,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-06-02 18:00",
+      "actual": 2.0,
+      "predicted": 3.9
+    },
+    {
+      "time": "2026-06-03 00:00",
+      "actual": 3.8,
+      "predicted": 4.0
+    },
+    {
+      "time": "2026-06-03 06:00",
+      "actual": 2.8,
+      "predicted": 4.3
+    },
+    {
+      "time": "2026-06-03 12:00",
+      "actual": 4.6,
+      "predicted": 4.3
+    },
+    {
+      "time": "2026-06-03 18:00",
+      "actual": 2.6,
+      "predicted": 3.9
+    },
+    {
+      "time": "2026-06-04 00:00",
+      "actual": 5.8,
+      "predicted": 4.7
+    },
+    {
+      "time": "2026-06-04 06:00",
+      "actual": 7.3,
+      "predicted": 4.2
+    },
+    {
+      "time": "2026-06-04 12:00",
+      "actual": 3.3,
+      "predicted": 4.4
+    },
+    {
+      "time": "2026-06-04 18:00",
+      "actual": 5.4,
+      "predicted": 3.9
+    },
+    {
+      "time": "2026-06-05 00:00",
+      "actual": 7.1,
+      "predicted": 5.6
+    },
+    {
+      "time": "2026-06-05 06:00",
+      "actual": 2.3,
+      "predicted": 4.8
+    },
+    {
+      "time": "2026-06-05 12:00",
+      "actual": 2.0,
+      "predicted": 3.4
+    },
+    {
+      "time": "2026-06-05 18:00",
+      "actual": 4.5,
+      "predicted": 3.4
+    },
+    {
+      "time": "2026-06-06 00:00",
+      "actual": 2.7,
+      "predicted": 4.1
+    },
+    {
+      "time": "2026-06-06 06:00",
+      "actual": 2.8,
+      "predicted": 3.0
+    },
+    {
+      "time": "2026-06-06 12:00",
+      "actual": 3.3,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-06-06 18:00",
+      "actual": 2.0,
+      "predicted": 3.0
+    },
+    {
+      "time": "2026-06-07 00:00",
+      "actual": 5.2,
+      "predicted": 3.2
+    },
+    {
+      "time": "2026-06-07 06:00",
+      "actual": 3.2,
+      "predicted": 3.2
+    },
+    {
+      "time": "2026-06-07 12:00",
+      "actual": 2.0,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-06-07 18:00",
+      "actual": 7.5,
+      "predicted": 4.5
+    },
+    {
+      "time": "2026-06-08 00:00",
+      "actual": 2.0,
+      "predicted": 4.0
+    },
+    {
+      "time": "2026-06-08 06:00",
+      "actual": 2.0,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-06-08 12:00",
+      "actual": 3.7,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-06-08 18:00",
+      "actual": 2.6,
+      "predicted": 3.9
+    },
+    {
+      "time": "2026-06-09 00:00",
+      "actual": 2.0,
+      "predicted": 3.4
+    },
+    {
+      "time": "2026-06-09 06:00",
+      "actual": 2.6,
+      "predicted": 3.4
+    },
+    {
+      "time": "2026-06-09 12:00",
+      "actual": 5.6,
+      "predicted": 3.0
+    },
+    {
+      "time": "2026-06-09 18:00",
+      "actual": 2.8,
+      "predicted": 3.8
+    },
+    {
+      "time": "2026-06-10 00:00",
+      "actual": 4.2,
+      "predicted": 3.8
+    },
+    {
+      "time": "2026-06-10 06:00",
+      "actual": 2.3,
+      "predicted": 3.4
+    },
+    {
+      "time": "2026-06-10 12:00",
+      "actual": 2.0,
+      "predicted": 3.2
+    },
+    {
+      "time": "2026-06-10 18:00",
+      "actual": 2.8,
+      "predicted": 3.6
+    },
+    {
+      "time": "2026-06-11 00:00",
+      "actual": 3.4,
+      "predicted": 4.1
+    },
+    {
+      "time": "2026-06-11 06:00",
+      "actual": 2.0,
+      "predicted": 3.1
+    },
+    {
+      "time": "2026-06-11 12:00",
+      "actual": 2.0,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-06-11 18:00",
+      "actual": 2.0,
+      "predicted": 3.3
+    },
+    {
+      "time": "2026-06-12 00:00",
+      "actual": 4.5,
+      "predicted": 3.5
+    },
+    {
+      "time": "2026-06-12 06:00",
+      "actual": 2.0,
+      "predicted": 3.1
+    },
+    {
+      "time": "2026-06-12 12:00",
+      "actual": 2.0,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-06-12 18:00",
+      "actual": 2.8,
+      "predicted": 3.2
+    },
+    {
+      "time": "2026-06-13 00:00",
+      "actual": 2.0,
+      "predicted": 3.7
+    },
+    {
+      "time": "2026-06-13 06:00",
+      "actual": 2.0,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-06-13 12:00",
+      "actual": 2.0,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-06-13 18:00",
+      "actual": 4.1,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-06-14 00:00",
+      "actual": 2.0,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-06-14 06:00",
+      "actual": 3.3,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-06-14 12:00",
+      "actual": 2.7,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-06-14 18:00",
+      "actual": 2.0,
+      "predicted": 3.6
+    },
+    {
+      "time": "2026-06-15 00:00",
+      "actual": 3.7,
+      "predicted": 4.0
+    },
+    {
+      "time": "2026-06-15 06:00",
+      "actual": 2.0,
+      "predicted": 3.2
+    },
+    {
+      "time": "2026-06-15 12:00",
+      "actual": 4.3,
+      "predicted": 3.2
+    },
+    {
+      "time": "2026-06-15 18:00",
+      "actual": 2.0,
+      "predicted": 3.8
+    },
+    {
+      "time": "2026-06-16 00:00",
+      "actual": 3.0,
+      "predicted": 3.2
+    },
+    {
+      "time": "2026-06-16 06:00",
+      "actual": 2.0,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-06-16 12:00",
+      "actual": 2.4,
+      "predicted": 3.2
+    },
+    {
+      "time": "2026-06-16 18:00",
+      "actual": 4.2,
+      "predicted": 3.7
+    },
+    {
+      "time": "2026-06-17 00:00",
+      "actual": 4.8,
+      "predicted": 3.7
+    },
+    {
+      "time": "2026-06-17 06:00",
+      "actual": 2.0,
+      "predicted": 3.1
+    },
+    {
+      "time": "2026-06-17 12:00",
+      "actual": 2.0,
+      "predicted": 3.0
+    },
+    {
+      "time": "2026-06-17 18:00",
+      "actual": 2.6,
+      "predicted": 3.0
+    },
+    {
+      "time": "2026-06-18 00:00",
+      "actual": 2.0,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-06-18 06:00",
+      "actual": 2.3,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-06-18 12:00",
+      "actual": 3.3,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-06-18 18:00",
+      "actual": 2.0,
+      "predicted": 3.1
+    },
+    {
+      "time": "2026-06-19 00:00",
+      "actual": 6.9,
+      "predicted": 3.2
+    },
+    {
+      "time": "2026-06-19 06:00",
+      "actual": 3.5,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-06-19 12:00",
+      "actual": 2.4,
+      "predicted": 3.2
+    },
+    {
+      "time": "2026-06-19 18:00",
+      "actual": 2.6,
+      "predicted": 3.7
+    },
+    {
+      "time": "2026-06-20 00:00",
+      "actual": 3.4,
+      "predicted": 4.1
+    },
+    {
+      "time": "2026-06-20 06:00",
+      "actual": 6.0,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-06-20 12:00",
+      "actual": 2.0,
+      "predicted": 3.1
+    },
+    {
+      "time": "2026-06-20 18:00",
+      "actual": 2.0,
+      "predicted": 3.6
+    },
+    {
+      "time": "2026-06-21 00:00",
+      "actual": 6.2,
+      "predicted": 3.6
+    },
+    {
+      "time": "2026-06-21 06:00",
+      "actual": 2.0,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-06-21 12:00",
+      "actual": 2.0,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-06-21 18:00",
+      "actual": 2.1,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-06-22 00:00",
+      "actual": 6.4,
+      "predicted": 3.2
+    },
+    {
+      "time": "2026-06-22 06:00",
+      "actual": 2.0,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-06-22 12:00",
+      "actual": 2.0,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-06-22 18:00",
+      "actual": 2.8,
+      "predicted": 3.0
+    },
+    {
+      "time": "2026-06-23 00:00",
+      "actual": 2.0,
+      "predicted": 3.0
+    },
+    {
+      "time": "2026-06-23 06:00",
+      "actual": 2.0,
+      "predicted": 2.3
+    },
+    {
+      "time": "2026-06-23 12:00",
+      "actual": 3.6,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-06-23 18:00",
+      "actual": 2.0,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-06-24 00:00",
+      "actual": 3.5,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-06-24 06:00",
+      "actual": 2.0,
+      "predicted": 2.3
+    },
+    {
+      "time": "2026-06-24 12:00",
+      "actual": 3.8,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-06-24 18:00",
+      "actual": 2.9,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-06-25 00:00",
+      "actual": 5.3,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-06-25 06:00",
+      "actual": 2.0,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-06-25 12:00",
+      "actual": 3.1,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-06-25 18:00",
+      "actual": 3.3,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-06-26 00:00",
+      "actual": 2.0,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-06-26 06:00",
+      "actual": 2.0,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-06-26 12:00",
+      "actual": 2.0,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-06-26 18:00",
+      "actual": 2.0,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-06-27 00:00",
+      "actual": 6.2,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-06-27 06:00",
+      "actual": 2.4,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-06-27 12:00",
+      "actual": 4.0,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-06-27 18:00",
+      "actual": 2.0,
+      "predicted": 3.0
+    },
+    {
+      "time": "2026-06-28 00:00",
+      "actual": 2.0,
+      "predicted": 3.0
+    },
+    {
+      "time": "2026-06-28 06:00",
+      "actual": 2.0,
+      "predicted": 2.1
+    },
+    {
+      "time": "2026-06-28 12:00",
+      "actual": 2.0,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-06-28 18:00",
+      "actual": 2.3,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-06-29 00:00",
+      "actual": 2.7,
+      "predicted": 3.1
+    },
+    {
+      "time": "2026-06-29 06:00",
+      "actual": 5.5,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-06-29 12:00",
+      "actual": 4.6,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-06-29 18:00",
+      "actual": 2.0,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-06-30 00:00",
+      "actual": 2.0,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-06-30 06:00",
+      "actual": 2.0,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-06-30 12:00",
+      "actual": 2.0,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-06-30 18:00",
+      "actual": 2.9,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-07-01 00:00",
+      "actual": 2.0,
+      "predicted": 3.2
+    },
+    {
+      "time": "2026-07-01 06:00",
+      "actual": 2.0,
+      "predicted": 3.0
+    },
+    {
+      "time": "2026-07-01 12:00",
+      "actual": 2.0,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-07-01 18:00",
+      "actual": 2.0,
+      "predicted": 3.1
+    },
+    {
+      "time": "2026-07-02 00:00",
+      "actual": 2.0,
+      "predicted": 3.7
+    },
+    {
+      "time": "2026-07-02 06:00",
+      "actual": 2.4,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-07-02 12:00",
+      "actual": 3.7,
+      "predicted": 3.0
+    },
+    {
+      "time": "2026-07-02 18:00",
+      "actual": 2.0,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-07-03 00:00",
+      "actual": 2.0,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-07-03 06:00",
+      "actual": 2.0,
+      "predicted": 2.2
+    },
+    {
+      "time": "2026-07-03 12:00",
+      "actual": 3.2,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-07-03 18:00",
+      "actual": 2.0,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-07-04 00:00",
+      "actual": 2.0,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-07-04 06:00",
+      "actual": 5.0,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-07-04 12:00",
+      "actual": 3.1,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-07-04 18:00",
+      "actual": 2.5,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-07-05 00:00",
+      "actual": 3.5,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-07-05 06:00",
+      "actual": 2.3,
+      "predicted": 2.3
+    },
+    {
+      "time": "2026-07-05 12:00",
+      "actual": 2.7,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-07-05 18:00",
+      "actual": 4.6,
+      "predicted": 3.4
+    },
+    {
+      "time": "2026-07-06 00:00",
+      "actual": 3.0,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-07-06 06:00",
+      "actual": 2.0,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-07-06 12:00",
+      "actual": 2.0,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-07-06 18:00",
+      "actual": 4.8,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-07-07 00:00",
+      "actual": 2.0,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-07-07 06:00",
+      "actual": 4.3,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-07-07 12:00",
+      "actual": 2.0,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-07-07 18:00",
+      "actual": 2.0,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-07-08 00:00",
+      "actual": 5.6,
+      "predicted": 3.2
+    },
+    {
+      "time": "2026-07-08 06:00",
+      "actual": 2.0,
+      "predicted": 2.3
+    },
+    {
+      "time": "2026-07-08 12:00",
+      "actual": 5.2,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-07-08 18:00",
+      "actual": 2.0,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-07-09 00:00",
+      "actual": 2.6,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-07-09 06:00",
+      "actual": 2.0,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-07-09 12:00",
+      "actual": 2.0,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-07-09 18:00",
+      "actual": 3.1,
+      "predicted": 3.1
+    },
+    {
+      "time": "2026-07-10 00:00",
+      "actual": 3.3,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-07-10 06:00",
+      "actual": 2.0,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-07-10 12:00",
+      "actual": 2.0,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-07-10 18:00",
+      "actual": 2.0,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-07-11 00:00",
+      "actual": 2.0,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-07-11 06:00",
+      "actual": 2.0,
+      "predicted": 2.2
+    },
+    {
+      "time": "2026-07-11 12:00",
+      "actual": 2.0,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-07-11 18:00",
+      "actual": 5.6,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-07-12 00:00",
+      "actual": 2.0,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-07-12 06:00",
+      "actual": 2.4,
+      "predicted": 2.3
+    },
+    {
+      "time": "2026-07-12 12:00",
+      "actual": 2.5,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-07-12 18:00",
+      "actual": 2.4,
+      "predicted": 3.2
+    },
+    {
+      "time": "2026-07-13 00:00",
+      "actual": 2.0,
+      "predicted": 3.3
+    },
+    {
+      "time": "2026-07-13 06:00",
+      "actual": 2.4,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-07-13 12:00",
+      "actual": 2.0,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-07-13 18:00",
+      "actual": 2.6,
+      "predicted": 3.1
+    },
+    {
+      "time": "2026-07-14 00:00",
+      "actual": 2.0,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-07-14 06:00",
+      "actual": 2.0,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-07-14 12:00",
+      "actual": 2.0,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-07-14 18:00",
+      "actual": 2.2,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-07-15 00:00",
+      "actual": 3.2,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-07-15 06:00",
+      "actual": 2.0,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-07-15 12:00",
+      "actual": 2.8,
+      "predicted": 2.3
+    },
+    {
+      "time": "2026-07-15 18:00",
+      "actual": 2.9,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-07-16 00:00",
+      "actual": 3.8,
+      "predicted": 3.3
+    },
+    {
+      "time": "2026-07-16 06:00",
+      "actual": 3.8,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-07-16 12:00",
+      "actual": 2.5,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-07-16 18:00",
+      "actual": 3.2,
+      "predicted": 3.0
+    },
+    {
+      "time": "2026-07-17 00:00",
+      "actual": 3.2,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-07-17 06:00",
+      "actual": 3.9,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-07-17 12:00",
+      "actual": 2.1,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-07-17 18:00",
+      "actual": 2.0,
+      "predicted": 3.3
+    },
+    {
+      "time": "2026-07-18 00:00",
+      "actual": 2.0,
+      "predicted": 3.0
+    },
+    {
+      "time": "2026-07-18 06:00",
+      "actual": 2.0,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-07-18 12:00",
+      "actual": 2.6,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-07-18 18:00",
+      "actual": 3.8,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-07-19 00:00",
+      "actual": 5.2,
+      "predicted": 3.1
+    },
+    {
+      "time": "2026-07-19 06:00",
+      "actual": 2.0,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-07-19 12:00",
+      "actual": 3.0,
+      "predicted": 2.3
+    },
+    {
+      "time": "2026-07-19 18:00",
+      "actual": 2.0,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-07-20 00:00",
+      "actual": 3.4,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-07-20 06:00",
+      "actual": 2.2,
+      "predicted": 2.3
+    },
+    {
+      "time": "2026-07-20 12:00",
+      "actual": 2.4,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-07-20 18:00",
+      "actual": 2.0,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-07-21 00:00",
+      "actual": 2.3,
+      "predicted": 3.3
+    },
+    {
+      "time": "2026-07-21 06:00",
+      "actual": 2.8,
+      "predicted": 2.3
+    },
+    {
+      "time": "2026-07-21 12:00",
+      "actual": 2.0,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-07-21 18:00",
+      "actual": 2.0,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-07-22 00:00",
+      "actual": 2.0,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-07-22 06:00",
+      "actual": 2.0,
+      "predicted": 2.3
+    },
+    {
+      "time": "2026-07-22 12:00",
+      "actual": 2.0,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-07-22 18:00",
+      "actual": 3.7,
+      "predicted": 2.3
+    },
+    {
+      "time": "2026-07-23 00:00",
+      "actual": 2.0,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-07-23 06:00",
+      "actual": 2.0,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-07-23 12:00",
+      "actual": 2.0,
+      "predicted": 2.3
+    },
+    {
+      "time": "2026-07-23 18:00",
+      "actual": 3.0,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-07-24 00:00",
+      "actual": 2.0,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-07-24 06:00",
+      "actual": 2.0,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-07-24 12:00",
+      "actual": 2.0,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-07-24 18:00",
+      "actual": 3.4,
+      "predicted": 3.1
+    },
+    {
+      "time": "2026-07-25 00:00",
+      "actual": 3.2,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-07-25 06:00",
+      "actual": 2.0,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-07-25 12:00",
+      "actual": 2.0,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-07-25 18:00",
+      "actual": 2.0,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-07-26 00:00",
+      "actual": 2.0,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-07-26 06:00",
+      "actual": 2.0,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-07-26 12:00",
+      "actual": 2.0,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-07-26 18:00",
+      "actual": 2.0,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-07-27 00:00",
+      "actual": 4.6,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-07-27 06:00",
+      "actual": 3.2,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-07-27 12:00",
+      "actual": 2.5,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-07-27 18:00",
+      "actual": 4.2,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-07-28 00:00",
+      "actual": 2.0,
+      "predicted": 3.0
+    },
+    {
+      "time": "2026-07-28 06:00",
+      "actual": 2.0,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-07-28 12:00",
+      "actual": 3.3,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-07-28 18:00",
+      "actual": 2.8,
+      "predicted": 3.1
+    },
+    {
+      "time": "2026-07-29 00:00",
+      "actual": 3.7,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-07-29 06:00",
+      "actual": 3.6,
+      "predicted": 2.3
+    },
+    {
+      "time": "2026-07-29 12:00",
+      "actual": 2.0,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-07-29 18:00",
+      "actual": 4.3,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-07-30 00:00",
+      "actual": 2.6,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-07-30 06:00",
+      "actual": 2.0,
+      "predicted": 2.3
+    },
+    {
+      "time": "2026-07-30 12:00",
+      "actual": 2.0,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-07-30 18:00",
+      "actual": 2.0,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-07-31 00:00",
+      "actual": 2.0,
+      "predicted": 3.1
+    },
+    {
+      "time": "2026-07-31 06:00",
+      "actual": 2.0,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-07-31 12:00",
+      "actual": 2.0,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-07-31 18:00",
+      "actual": 4.1,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-08-01 00:00",
+      "actual": 2.0,
+      "predicted": 3.0
+    },
+    {
+      "time": "2026-08-01 06:00",
+      "actual": 2.0,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-08-01 12:00",
+      "actual": 2.7,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-08-01 18:00",
+      "actual": 2.0,
+      "predicted": 3.0
+    },
+    {
+      "time": "2026-08-02 00:00",
+      "actual": 2.4,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-08-02 06:00",
+      "actual": 2.8,
+      "predicted": 2.3
+    },
+    {
+      "time": "2026-08-02 12:00",
+      "actual": 2.0,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-08-02 18:00",
+      "actual": 2.0,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-08-03 00:00",
+      "actual": 3.8,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-08-03 06:00",
+      "actual": 3.1,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-08-03 12:00",
+      "actual": 2.0,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-08-03 18:00",
+      "actual": 2.0,
+      "predicted": 3.0
+    },
+    {
+      "time": "2026-08-04 00:00",
+      "actual": 2.0,
+      "predicted": 3.5
+    },
+    {
+      "time": "2026-08-04 06:00",
+      "actual": 2.0,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-08-04 12:00",
+      "actual": 3.9,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-08-04 18:00",
+      "actual": 2.4,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-08-05 00:00",
+      "actual": 2.9,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-08-05 06:00",
+      "actual": 3.9,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-08-05 12:00",
+      "actual": 2.0,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-08-05 18:00",
+      "actual": 3.7,
+      "predicted": 3.2
+    },
+    {
+      "time": "2026-08-06 00:00",
+      "actual": 7.7,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-08-06 06:00",
+      "actual": 2.0,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-08-06 12:00",
+      "actual": 3.1,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-08-06 18:00",
+      "actual": 2.0,
+      "predicted": 3.0
+    },
+    {
+      "time": "2026-08-07 00:00",
+      "actual": 2.0,
+      "predicted": 3.3
+    },
+    {
+      "time": "2026-08-07 06:00",
+      "actual": 2.0,
+      "predicted": 2.3
+    },
+    {
+      "time": "2026-08-07 12:00",
+      "actual": 2.0,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-08-07 18:00",
+      "actual": 2.0,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-08-08 00:00",
+      "actual": 3.2,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-08-08 06:00",
+      "actual": 2.5,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-08-08 12:00",
+      "actual": 2.0,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-08-08 18:00",
+      "actual": 2.0,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-08-09 00:00",
+      "actual": 3.6,
+      "predicted": 3.3
+    },
+    {
+      "time": "2026-08-09 06:00",
+      "actual": 2.0,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-08-09 12:00",
+      "actual": 2.0,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-08-09 18:00",
+      "actual": 2.0,
+      "predicted": 3.1
+    },
+    {
+      "time": "2026-08-10 00:00",
+      "actual": 2.0,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-08-10 06:00",
+      "actual": 3.7,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-08-10 12:00",
+      "actual": 4.0,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-08-10 18:00",
+      "actual": 2.1,
+      "predicted": 3.0
+    },
+    {
+      "time": "2026-08-11 00:00",
+      "actual": 2.2,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-08-11 06:00",
+      "actual": 2.0,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-08-11 12:00",
+      "actual": 2.0,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-08-11 18:00",
+      "actual": 2.0,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-08-12 00:00",
+      "actual": 2.0,
+      "predicted": 3.4
+    },
+    {
+      "time": "2026-08-12 06:00",
+      "actual": 2.0,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-08-12 12:00",
+      "actual": 2.0,
+      "predicted": 3.1
+    },
+    {
+      "time": "2026-08-12 18:00",
+      "actual": 3.5,
+      "predicted": 3.5
+    },
+    {
+      "time": "2026-08-13 00:00",
+      "actual": 2.0,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-08-13 06:00",
+      "actual": 2.0,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-08-13 12:00",
+      "actual": 2.0,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-08-13 18:00",
+      "actual": 2.8,
+      "predicted": 3.1
+    },
+    {
+      "time": "2026-08-14 00:00",
+      "actual": 3.9,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-08-14 06:00",
+      "actual": 3.0,
+      "predicted": 2.3
+    },
+    {
+      "time": "2026-08-14 12:00",
+      "actual": 2.0,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-08-14 18:00",
+      "actual": 2.7,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-08-15 00:00",
+      "actual": 6.7,
+      "predicted": 3.1
+    },
+    {
+      "time": "2026-08-15 06:00",
+      "actual": 2.0,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-08-15 12:00",
+      "actual": 4.5,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-08-15 18:00",
+      "actual": 2.5,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-08-16 00:00",
+      "actual": 2.0,
+      "predicted": 3.4
+    },
+    {
+      "time": "2026-08-16 06:00",
+      "actual": 2.0,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-08-16 12:00",
+      "actual": 2.0,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-08-16 18:00",
+      "actual": 6.3,
+      "predicted": 3.4
+    },
+    {
+      "time": "2026-08-17 00:00",
+      "actual": 2.0,
+      "predicted": 3.2
+    },
+    {
+      "time": "2026-08-17 06:00",
+      "actual": 2.0,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-08-17 12:00",
+      "actual": 2.0,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-08-17 18:00",
+      "actual": 3.8,
+      "predicted": 3.0
+    },
+    {
+      "time": "2026-08-18 00:00",
+      "actual": 3.8,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-08-18 06:00",
+      "actual": 2.0,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-08-18 12:00",
+      "actual": 4.0,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-08-18 18:00",
+      "actual": 3.3,
+      "predicted": 3.0
+    },
+    {
+      "time": "2026-08-19 00:00",
+      "actual": 5.3,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-08-19 06:00",
+      "actual": 2.0,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-08-19 12:00",
+      "actual": 2.2,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-08-19 18:00",
+      "actual": 2.0,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-08-20 00:00",
+      "actual": 3.1,
+      "predicted": 3.2
+    },
+    {
+      "time": "2026-08-20 06:00",
+      "actual": 2.0,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-08-20 12:00",
+      "actual": 2.0,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-08-20 18:00",
+      "actual": 4.2,
+      "predicted": 3.0
+    },
+    {
+      "time": "2026-08-21 00:00",
+      "actual": 2.0,
+      "predicted": 3.4
+    },
+    {
+      "time": "2026-08-21 06:00",
+      "actual": 2.8,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-08-21 12:00",
+      "actual": 2.8,
+      "predicted": 2.5
+    },
+    {
+      "time": "2026-08-21 18:00",
+      "actual": 2.0,
+      "predicted": 3.2
+    },
+    {
+      "time": "2026-08-22 00:00",
+      "actual": 2.2,
+      "predicted": 3.4
+    },
+    {
+      "time": "2026-08-22 06:00",
+      "actual": 2.0,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-08-22 12:00",
+      "actual": 2.0,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-08-22 18:00",
+      "actual": 2.0,
+      "predicted": 3.1
+    },
+    {
+      "time": "2026-08-23 00:00",
+      "actual": 3.0,
+      "predicted": 3.8
+    },
+    {
+      "time": "2026-08-23 06:00",
+      "actual": 2.4,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-08-23 12:00",
+      "actual": 2.0,
+      "predicted": 3.0
+    },
+    {
+      "time": "2026-08-23 18:00",
+      "actual": 2.0,
+      "predicted": 3.3
+    },
+    {
+      "time": "2026-08-24 00:00",
+      "actual": 4.9,
+      "predicted": 3.1
+    },
+    {
+      "time": "2026-08-24 06:00",
+      "actual": 2.0,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-08-24 12:00",
+      "actual": 4.2,
+      "predicted": 3.1
+    },
+    {
+      "time": "2026-08-24 18:00",
+      "actual": 2.8,
+      "predicted": 3.5
+    },
+    {
+      "time": "2026-08-25 00:00",
+      "actual": 5.5,
+      "predicted": 3.6
+    },
+    {
+      "time": "2026-08-25 06:00",
+      "actual": 2.0,
+      "predicted": 3.0
+    },
+    {
+      "time": "2026-08-25 12:00",
+      "actual": 2.5,
+      "predicted": 3.2
+    },
+    {
+      "time": "2026-08-25 18:00",
+      "actual": 2.0,
+      "predicted": 3.3
+    },
+    {
+      "time": "2026-08-26 00:00",
+      "actual": 2.0,
+      "predicted": 3.2
+    },
+    {
+      "time": "2026-08-26 06:00",
+      "actual": 2.0,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-08-26 12:00",
+      "actual": 3.8,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-08-26 18:00",
+      "actual": 3.0,
+      "predicted": 3.1
+    },
+    {
+      "time": "2026-08-27 00:00",
+      "actual": 2.0,
+      "predicted": 3.0
+    },
+    {
+      "time": "2026-08-27 06:00",
+      "actual": 2.0,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-08-27 12:00",
+      "actual": 2.7,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-08-27 18:00",
+      "actual": 4.7,
+      "predicted": 3.5
+    },
+    {
+      "time": "2026-08-28 00:00",
+      "actual": 3.4,
+      "predicted": 3.5
+    },
+    {
+      "time": "2026-08-28 06:00",
+      "actual": 2.0,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-08-28 12:00",
+      "actual": 2.0,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-08-28 18:00",
+      "actual": 3.6,
+      "predicted": 3.2
+    },
+    {
+      "time": "2026-08-29 00:00",
+      "actual": 2.0,
+      "predicted": 3.3
+    },
+    {
+      "time": "2026-08-29 06:00",
+      "actual": 5.6,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-08-29 12:00",
+      "actual": 2.0,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-08-29 18:00",
+      "actual": 2.6,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-08-30 00:00",
+      "actual": 2.0,
+      "predicted": 3.9
+    },
+    {
+      "time": "2026-08-30 06:00",
+      "actual": 2.0,
+      "predicted": 3.3
+    },
+    {
+      "time": "2026-08-30 12:00",
+      "actual": 3.4,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-08-30 18:00",
+      "actual": 2.1,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-08-31 00:00",
+      "actual": 2.0,
+      "predicted": 3.6
+    },
+    {
+      "time": "2026-08-31 06:00",
+      "actual": 2.2,
+      "predicted": 3.0
+    },
+    {
+      "time": "2026-08-31 12:00",
+      "actual": 3.0,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-08-31 18:00",
+      "actual": 6.5,
+      "predicted": 3.5
+    },
+    {
+      "time": "2026-09-01 00:00",
+      "actual": 6.3,
+      "predicted": 3.1
+    },
+    {
+      "time": "2026-09-01 06:00",
+      "actual": 3.2,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-09-01 12:00",
+      "actual": 6.4,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-09-01 18:00",
+      "actual": 3.7,
+      "predicted": 3.6
+    },
+    {
+      "time": "2026-09-02 00:00",
+      "actual": 5.7,
+      "predicted": 4.3
+    },
+    {
+      "time": "2026-09-02 06:00",
+      "actual": 2.0,
+      "predicted": 3.3
+    },
+    {
+      "time": "2026-09-02 12:00",
+      "actual": 2.2,
+      "predicted": 3.0
+    },
+    {
+      "time": "2026-09-02 18:00",
+      "actual": 2.8,
+      "predicted": 3.4
+    },
+    {
+      "time": "2026-09-03 00:00",
+      "actual": 3.6,
+      "predicted": 3.2
+    },
+    {
+      "time": "2026-09-03 06:00",
+      "actual": 2.0,
+      "predicted": 2.9
+    },
+    {
+      "time": "2026-09-03 12:00",
+      "actual": 2.0,
+      "predicted": 2.7
+    },
+    {
+      "time": "2026-09-03 18:00",
+      "actual": 2.1,
+      "predicted": 3.1
+    },
+    {
+      "time": "2026-09-04 00:00",
+      "actual": 2.0,
+      "predicted": 3.7
+    },
+    {
+      "time": "2026-09-04 06:00",
+      "actual": 6.2,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-09-04 12:00",
+      "actual": 3.6,
+      "predicted": 3.5
+    },
+    {
+      "time": "2026-09-04 18:00",
+      "actual": 5.5,
+      "predicted": 3.7
+    },
+    {
+      "time": "2026-09-05 00:00",
+      "actual": 2.8,
+      "predicted": 3.9
+    },
+    {
+      "time": "2026-09-05 06:00",
+      "actual": 3.5,
+      "predicted": 3.5
+    },
+    {
+      "time": "2026-09-05 12:00",
+      "actual": 2.4,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-09-05 18:00",
+      "actual": 4.8,
+      "predicted": 3.0
+    },
+    {
+      "time": "2026-09-06 00:00",
+      "actual": 3.2,
+      "predicted": 3.8
+    },
+    {
+      "time": "2026-09-06 06:00",
+      "actual": 4.8,
+      "predicted": 2.4
+    },
+    {
+      "time": "2026-09-06 12:00",
+      "actual": 2.6,
+      "predicted": 3.6
+    },
+    {
+      "time": "2026-09-06 18:00",
+      "actual": 2.0,
+      "predicted": 4.1
+    },
+    {
+      "time": "2026-09-07 00:00",
+      "actual": 2.8,
+      "predicted": 4.0
+    },
+    {
+      "time": "2026-09-07 06:00",
+      "actual": 2.0,
+      "predicted": 2.6
+    },
+    {
+      "time": "2026-09-07 12:00",
+      "actual": 4.9,
+      "predicted": 3.0
+    },
+    {
+      "time": "2026-09-07 18:00",
+      "actual": 3.6,
+      "predicted": 3.4
+    },
+    {
+      "time": "2026-09-08 00:00",
+      "actual": 7.7,
+      "predicted": 3.5
+    },
+    {
+      "time": "2026-09-08 06:00",
+      "actual": 2.8,
+      "predicted": 4.4
+    },
+    {
+      "time": "2026-09-08 12:00",
+      "actual": 6.1,
+      "predicted": 3.7
+    },
+    {
+      "time": "2026-09-08 18:00",
+      "actual": 8.1,
+      "predicted": 4.3
+    },
+    {
+      "time": "2026-09-09 00:00",
+      "actual": 6.8,
+      "predicted": 4.6
+    },
+    {
+      "time": "2026-09-09 06:00",
+      "actual": 2.4,
+      "predicted": 3.5
+    },
+    {
+      "time": "2026-09-09 12:00",
+      "actual": 3.5,
+      "predicted": 3.0
+    },
+    {
+      "time": "2026-09-09 18:00",
+      "actual": 2.3,
+      "predicted": 3.9
+    },
+    {
+      "time": "2026-09-10 00:00",
+      "actual": 6.9,
+      "predicted": 5.2
+    },
+    {
+      "time": "2026-09-10 06:00",
+      "actual": 3.6,
+      "predicted": 4.5
+    },
+    {
+      "time": "2026-09-10 12:00",
+      "actual": 2.0,
+      "predicted": 3.1
+    },
+    {
+      "time": "2026-09-10 18:00",
+      "actual": 2.6,
+      "predicted": 3.3
+    },
+    {
+      "time": "2026-09-11 00:00",
+      "actual": 3.0,
+      "predicted": 3.2
+    },
+    {
+      "time": "2026-09-11 06:00",
+      "actual": 3.2,
+      "predicted": 3.6
+    },
+    {
+      "time": "2026-09-11 12:00",
+      "actual": 2.0,
+      "predicted": 3.1
+    },
+    {
+      "time": "2026-09-11 18:00",
+      "actual": 3.6,
+      "predicted": 4.4
+    },
+    {
+      "time": "2026-09-12 00:00",
+      "actual": 2.0,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-09-12 06:00",
+      "actual": 2.6,
+      "predicted": 3.3
+    },
+    {
+      "time": "2026-09-12 12:00",
+      "actual": 2.0,
+      "predicted": 4.4
+    },
+    {
+      "time": "2026-09-12 18:00",
+      "actual": 2.0,
+      "predicted": 4.6
+    },
+    {
+      "time": "2026-09-13 00:00",
+      "actual": 2.0,
+      "predicted": 4.2
+    },
+    {
+      "time": "2026-09-13 06:00",
+      "actual": 2.1,
+      "predicted": 3.6
+    },
+    {
+      "time": "2026-09-13 12:00",
+      "actual": 2.0,
+      "predicted": 3.0
+    },
+    {
+      "time": "2026-09-13 18:00",
+      "actual": 3.7,
+      "predicted": 3.6
+    },
+    {
+      "time": "2026-09-14 00:00",
+      "actual": 5.2,
+      "predicted": 4.4
+    },
+    {
+      "time": "2026-09-14 06:00",
+      "actual": 2.0,
+      "predicted": 4.0
+    },
+    {
+      "time": "2026-09-14 12:00",
+      "actual": 5.5,
+      "predicted": 3.1
+    },
+    {
+      "time": "2026-09-14 18:00",
+      "actual": 2.0,
+      "predicted": 3.6
+    },
+    {
+      "time": "2026-09-15 00:00",
+      "actual": 5.8,
+      "predicted": 4.3
+    },
+    {
+      "time": "2026-09-15 06:00",
+      "actual": 3.9,
+      "predicted": 4.2
+    },
+    {
+      "time": "2026-09-15 12:00",
+      "actual": 5.7,
+      "predicted": 4.1
+    },
+    {
+      "time": "2026-09-15 18:00",
+      "actual": 3.6,
+      "predicted": 4.2
+    },
+    {
+      "time": "2026-09-16 00:00",
+      "actual": 7.0,
+      "predicted": 5.9
+    },
+    {
+      "time": "2026-09-16 06:00",
+      "actual": 7.0,
+      "predicted": 6.7
+    },
+    {
+      "time": "2026-09-16 12:00",
+      "actual": 2.0,
+      "predicted": 4.5
+    },
+    {
+      "time": "2026-09-16 18:00",
+      "actual": 4.0,
+      "predicted": 4.9
+    },
+    {
+      "time": "2026-09-17 00:00",
+      "actual": 5.6,
+      "predicted": 3.8
+    },
+    {
+      "time": "2026-09-17 06:00",
+      "actual": 6.0,
+      "predicted": 3.1
+    },
+    {
+      "time": "2026-09-17 12:00",
+      "actual": 2.0,
+      "predicted": 2.8
+    },
+    {
+      "time": "2026-09-17 18:00",
+      "actual": 5.6,
+      "predicted": 3.6
+    },
+    {
+      "time": "2026-09-18 00:00",
+      "actual": 3.2,
+      "predicted": 5.1
+    },
+    {
+      "time": "2026-09-18 06:00",
+      "actual": 4.3,
+      "predicted": 5.1
+    },
+    {
+      "time": "2026-09-18 12:00",
+      "actual": 3.1,
+      "predicted": 3.3
+    },
+    {
+      "time": "2026-09-18 18:00",
+      "actual": 6.9,
+      "predicted": 3.6
+    },
+    {
+      "time": "2026-09-19 00:00",
+      "actual": 2.0,
+      "predicted": 8.0
+    },
+    {
+      "time": "2026-09-19 06:00",
+      "actual": 2.2,
+      "predicted": 5.2
+    },
+    {
+      "time": "2026-09-19 12:00",
+      "actual": 2.0,
+      "predicted": 3.6
+    },
+    {
+      "time": "2026-09-19 18:00",
+      "actual": 3.7,
+      "predicted": 5.9
+    },
+    {
+      "time": "2026-09-20 00:00",
+      "actual": 5.4,
+      "predicted": 7.0
+    },
+    {
+      "time": "2026-09-20 06:00",
+      "actual": 6.4,
+      "predicted": 7.9
+    },
+    {
+      "time": "2026-09-20 12:00",
+      "actual": 6.6,
+      "predicted": 5.3
+    },
+    {
+      "time": "2026-09-20 18:00",
+      "actual": 2.0,
+      "predicted": 5.4
+    },
+    {
+      "time": "2026-09-21 00:00",
+      "actual": 3.6,
+      "predicted": 5.6
+    },
+    {
+      "time": "2026-09-21 06:00",
+      "actual": 3.7,
+      "predicted": 3.8
+    },
+    {
+      "time": "2026-09-21 12:00",
+      "actual": 5.6,
+      "predicted": 3.7
+    },
+    {
+      "time": "2026-09-21 18:00",
+      "actual": 7.1,
+      "predicted": 4.3
+    },
+    {
+      "time": "2026-09-22 00:00",
+      "actual": 8.5,
+      "predicted": 6.4
+    },
+    {
+      "time": "2026-09-22 06:00",
+      "actual": 7.6,
+      "predicted": 5.1
+    },
+    {
+      "time": "2026-09-22 12:00",
+      "actual": 5.4,
+      "predicted": 4.9
+    },
+    {
+      "time": "2026-09-22 18:00",
+      "actual": 2.0,
+      "predicted": 4.2
+    },
+    {
+      "time": "2026-09-23 00:00",
+      "actual": 3.7,
+      "predicted": 4.0
+    },
+    {
+      "time": "2026-09-23 06:00",
+      "actual": 2.0,
+      "predicted": 3.5
+    },
+    {
+      "time": "2026-09-23 12:00",
+      "actual": 7.3,
+      "predicted": 3.9
+    },
+    {
+      "time": "2026-09-23 18:00",
+      "actual": 10.8,
+      "predicted": 3.7
+    },
+    {
+      "time": "2026-09-24 00:00",
+      "actual": 10.7,
+      "predicted": 4.9
+    },
+    {
+      "time": "2026-09-24 06:00",
+      "actual": 2.0,
+      "predicted": 4.5
+    },
+    {
+      "time": "2026-09-24 12:00",
+      "actual": 3.3,
+      "predicted": 4.0
+    },
+    {
+      "time": "2026-09-24 18:00",
+      "actual": 2.3,
+      "predicted": 4.2
+    },
+    {
+      "time": "2026-09-25 00:00",
+      "actual": 4.1,
+      "predicted": 4.4
+    },
+    {
+      "time": "2026-09-25 06:00",
+      "actual": 4.6,
+      "predicted": 3.3
+    },
+    {
+      "time": "2026-09-25 12:00",
+      "actual": 5.0,
+      "predicted": 3.8
+    },
+    {
+      "time": "2026-09-25 18:00",
+      "actual": 2.0,
+      "predicted": 4.1
+    },
+    {
+      "time": "2026-09-26 00:00",
+      "actual": 3.5,
+      "predicted": 5.8
+    },
+    {
+      "time": "2026-09-26 06:00",
+      "actual": 4.1,
+      "predicted": 4.9
+    },
+    {
+      "time": "2026-09-26 12:00",
+      "actual": 2.5,
+      "predicted": 4.5
+    },
+    {
+      "time": "2026-09-26 18:00",
+      "actual": 9.9,
+      "predicted": 4.4
+    },
+    {
+      "time": "2026-09-27 00:00",
+      "actual": 8.2,
+      "predicted": 6.1
+    },
+    {
+      "time": "2026-09-27 06:00",
+      "actual": 5.2,
+      "predicted": 4.6
+    },
+    {
+      "time": "2026-09-27 12:00",
+      "actual": 6.7,
+      "predicted": 4.1
+    },
+    {
+      "time": "2026-09-27 18:00",
+      "actual": 7.7,
+      "predicted": 7.0
+    },
+    {
+      "time": "2026-09-28 00:00",
+      "actual": 11.0,
+      "predicted": 8.2
+    },
+    {
+      "time": "2026-09-28 06:00",
+      "actual": 8.2,
+      "predicted": 5.2
+    },
+    {
+      "time": "2026-09-28 12:00",
+      "actual": 6.4,
+      "predicted": 5.9
+    },
+    {
+      "time": "2026-09-28 18:00",
+      "actual": 7.0,
+      "predicted": 5.8
+    },
+    {
+      "time": "2026-09-29 00:00",
+      "actual": 11.5,
+      "predicted": 6.8
+    },
+    {
+      "time": "2026-09-29 06:00",
+      "actual": 2.4,
+      "predicted": 4.8
+    },
+    {
+      "time": "2026-09-29 12:00",
+      "actual": 4.0,
+      "predicted": 4.3
+    },
+    {
+      "time": "2026-09-29 18:00",
+      "actual": 8.3,
+      "predicted": 5.8
+    },
+    {
+      "time": "2026-09-30 00:00",
+      "actual": 5.0,
+      "predicted": 6.2
+    },
+    {
+      "time": "2026-09-30 06:00",
+      "actual": 2.0,
+      "predicted": 4.2
+    },
+    {
+      "time": "2026-09-30 12:00",
+      "actual": 2.0,
+      "predicted": 5.4
+    },
+    {
+      "time": "2026-09-30 18:00",
+      "actual": 7.9,
+      "predicted": 5.0
+    },
+    {
+      "time": "2026-10-01 00:00",
+      "actual": 10.2,
+      "predicted": 5.6
+    },
+    {
+      "time": "2026-10-01 06:00",
+      "actual": 9.1,
+      "predicted": 5.5
+    },
+    {
+      "time": "2026-10-01 12:00",
+      "actual": 8.3,
+      "predicted": 4.5
+    },
+    {
+      "time": "2026-10-01 18:00",
+      "actual": 6.1,
+      "predicted": 4.8
+    }
+  ]
+}
